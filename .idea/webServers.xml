@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9d5651ba-fe01-4a50-80f5-b509d146ed28" name="GPU Server" url="http://49.50.167.102">
+        <fileTransfer host="49.50.167.102" port="16022" rootFolder="/home/ubuntu" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="16022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
