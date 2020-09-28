@@ -39,7 +39,7 @@ train_x = train_x.reshape(train_x.shape[0], train_x.shape[1], n_features)
 print("train_x.shape = {}".format(train_x.shape))
 print("train_y.shape = {}".format(train_y.shape))
 
-# RNN 모델 정의
+# LSTM 모델 정의
 model = Sequential()
 model.add(LSTM(units=10, return_sequences=False, input_shape=(n_timesteps, n_features)))
 model.add(Dense(1))
