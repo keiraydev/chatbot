@@ -70,8 +70,10 @@ for i in range(len(test_x) - n_timesteps):
     test_y = np.append(test_y, train_y)
 
 # 예측 결과 그래프 그리기
-plt.plot(test_x, calc_y, label="ground truth", color="orange")
-plt.plot(test_x, test_y, label="predicitons", color="blue")
+l1 = plt.plot(test_x, calc_y, label="ground truth")
+l2 = plt.plot(test_x, test_y, label="predicitons")
+plt.setp(l1, color='r', linewidth=10.0)
+plt.setp(l2, color='b', linewidth=2.0, linestyle='--')
 plt.legend(loc='upper left')
 plt.ylim(-2, 2)
 plt.show()
