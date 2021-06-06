@@ -8,7 +8,7 @@ sent_file = '주문조합.csv'
 
 komoran = Komoran(userdic='../../utils/user_dic.tsv')
 
-file = open("새파일2.txt", 'w')
+file = open("output_ner_train.txt", 'w')
 with open(date_file, mode='r', encoding='utf-8-sig') as df:
     dr = csv.reader(df)
     for k, r in enumerate(dr):
@@ -65,36 +65,3 @@ with open(date_file, mode='r', encoding='utf-8-sig') as df:
                     file.write(line + "\n")
 
 file.close()
-exit()
-with open(food_file, mode='r', encoding='utf-8-sig') as f:
-    reader = csv.reader(f)
-    for i, row in enumerate(reader):
-        word = str(row[0]).strip()
-
-        with open(sent_file, mode="r", encoding="utf-8") as qf:
-            qreader = csv.reader(qf)
-            for j, qrow in enumerate(qreader):
-                question = word.strip() + ' ' + qrow[0].strip()
-                question = question.replace(" ﻿", " ")
-                raw_q = '; ' + question
-                res_q = "$ <{}:FOOD>".format(word)+ ' ' + qrow[0].strip()
-                pos = komoran.pos(question)
-
-                lines += (raw_q + "\n")
-                lines += (res_q + "\n")
-
-                for i, p in enumerate(pos):
-                    if i==0: tag = "B_FOOD"
-                    else: tag = 'O'
-
-                    line = "{}\t{}\t{}\t{}\n".format(i+1, p[0], p[1], tag)
-                    lines += line
-                lines += "\n"
-            break
-        break
-
-# f = open("새파일.txt", 'w')
-# f.write(lines)
-# f.close()
-
-print(lines)
