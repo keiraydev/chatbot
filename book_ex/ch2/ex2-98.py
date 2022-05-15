@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 f = lambda x: x ** 2
 
 # x, y축 데이터 정의
-x = [x for x in range(-10, 10)]
-y = [f(y) for y in range(-10, 10)]
+x = [x for x in range(-8, 9)]
+y = [f(y) for y in range(-8, 9)]
 
 # x, y축 데이터 출력
 print('x축', x)
